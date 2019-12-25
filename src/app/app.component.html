@@ -1,8 +1,17 @@
 <h1>
   Welcome to {{ data.title }}
 </h1>
-<img width="300" alt="Angualar" src="data:">
-<!-- Angular input property syntax -->
-<input class="demo" [value]="data.title">
+<button (click)='onLogoClicked()'>Click</button>
+<!--
+    Angular input property syntax: [value]="data.title"
+    Template reference: #titleInput
+        - titleInput is pointing to the native DOM element
+        - titleInput.value is its current value
+-->
+<br><input class="demo" (keyup)='onKeyUp(titleInput.value)'
+           [value]="data.title" #titleInput>
+<!--
+    Other ways of assigning a value
+ -->
 <br><input class="demo" [value]="'a string'">
 <br><input class="demo" value='a string'>
